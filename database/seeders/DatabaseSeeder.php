@@ -2,6 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Post;
+use App\Models\User;
+use Carbon\Factory;
+use Faker\Factory as FakerFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +18,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $user = User::factory()
+        ->hasPosts(10)
+        ->create();
     }
 }
